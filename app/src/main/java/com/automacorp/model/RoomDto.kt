@@ -3,7 +3,11 @@ package com.automacorp.model
 data class RoomDto(
     val id: Long,
     val name: String,
-    val currentTemperature: Double?,
-    val targetTemperature: Double?,
-    val windows: List<WindowDto>
+    val currentTemp: Double,
+    val targetTemp: Double?,
+    val floor: Int,
+    val buildingId: Long,
+    val currentTempId: Long,
+    val windows: List<WindowDto>,
+    val heaters: List<HeaterDto>
 )

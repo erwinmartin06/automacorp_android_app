@@ -36,7 +36,7 @@ class RoomsAdapter(val listener: OnRoomClickListener) : RecyclerView.Adapter<Roo
         val roomDto = items[position]
         holder.apply {
             name.text = roomDto.name
-            currentTemperature.text = roomDto.currentTemperature?.toString() ?: "?"
+            currentTemperature.text = roomDto.currentTemp?.toString() ?: "?"
             itemView.setOnClickListener { listener.selectRoom(roomDto.id) } // (1)
         }
     }
