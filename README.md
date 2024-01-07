@@ -6,6 +6,7 @@ All of this can, for example, serve as a simulation to understand how to efficie
 
 # Instructions to access the backend
 
+The backend can be downloaded [here](https://github.com/erwinmartin06/automacorp) on Github.
 To access the backend with swagger interface, you can connect locally after starting the Automacorp Application on your computer [here](http://localhost:8080/swagger-ui/index.html).<br>
 Since the backend has been deployed in clever cloud you can also access it [here](http://automacorp-erwin-martin.cleverapps.io/swagger-ui/index.html). <br> <br>
 
