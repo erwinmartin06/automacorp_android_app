@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.automacorp.adapter.HeatersAdapter
 import com.automacorp.adapter.WindowsAdapter
 import com.automacorp.model.RoomCommandDto
 import com.automacorp.model.RoomDto
@@ -35,7 +36,7 @@ class RoomActivity : BasicActivity() {
                     withContext(context = Dispatchers.Main) {
                         response.body()?.let { room ->
                             populateScreenRoom(room)
-                            fetchWindowDetails(room.name)
+                            fetchWindowAndHeatersDetails(room.name)
                         } ?: Toast.makeText(applicationContext, "Room not found", Toast.LENGTH_LONG)
                             .show()
                     }
@@ -50,7 +51,7 @@ class RoomActivity : BasicActivity() {
         }
     }
 
-    private fun fetchWindowDetails(roomName: String) {
+    private fun fetchWindowAndHeatersDetails(roomName: String) {
         val windowsAdapter = WindowsAdapter()
 
         findViewById<RecyclerView>(R.id.list_windows).also { recyclerView ->
@@ -65,6 +66,34 @@ class RoomActivity : BasicActivity() {
                 .onSuccess {
                     withContext(context = Dispatchers.Main) {
                         windowsAdapter.setItems(it.body() ?: emptyList()) }
+                }
+                .onFailure {
+                    withContext(context = Dispatchers.Main) {
+                        it.printStackTrace()
+                        Toast.makeText(applicationContext, "Error on windows loading $it", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                }
+        }
+
+        fetchHeaterDetails(roomName)
+    }
+
+    private fun fetchHeaterDetails(roomName: String) {
+        val heaterAdapter = HeatersAdapter()
+
+        findViewById<RecyclerView>(R.id.list_heaters).also { recyclerView ->
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+            recyclerView.setHasFixedSize(true)
+            recyclerView.adapter = heaterAdapter
+        }
+
+        lifecycleScope.launch(context = Dispatchers.IO) {
+            runCatching { ApiServices.heatersApiService.findHeatersByRoomName(roomName).execute() }
+                .onSuccess {
+                    withContext(context = Dispatchers.Main) {
+                        heaterAdapter.setItems(it.body() ?: emptyList()) }
                 }
                 .onFailure {
                     withContext(context = Dispatchers.Main) {

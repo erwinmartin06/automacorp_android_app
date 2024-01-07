@@ -39,6 +39,19 @@ object ApiServices {
             .create(WindowsApiService::class.java)
     }
 
+    val heatersApiService : HeatersApiService by lazy {
+        val client = getUnsafeOkHttpClient()
+            .addInterceptor(BasicAuthInterceptor(API_USERNAME, API_PASSWORD))
+            .build()
+
+        Retrofit.Builder()
+            .addConverterFactory(MoshiConverterFactory.create())
+            .client(client)
+            .baseUrl("https://automacorp-erwin-martin.cleverapps.io/api/")
+            .build()
+            .create(HeatersApiService::class.java)
+    }
+
     private fun getUnsafeOkHttpClient(): OkHttpClient.Builder =
         OkHttpClient.Builder().apply {
             val trustManager = object : X509TrustManager {

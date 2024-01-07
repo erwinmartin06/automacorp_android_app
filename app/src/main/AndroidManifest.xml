@@ -22,7 +22,8 @@
         <activity
             android:name=".RoomActivity"
             android:exported="false"
-            android:parentActivityName=".RoomListActivity"/>
+            android:parentActivityName=".RoomListActivity"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".WindowActivity"
             android:exported="false"

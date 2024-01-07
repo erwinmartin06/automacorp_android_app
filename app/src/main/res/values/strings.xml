@@ -11,6 +11,7 @@
     <string name="act_main_currenttemp_hint">Current temperature</string>
     <string name="act_main_targettemperature_hint">Target temperature</string>
     <string name="act_main_windows_hint">Windows</string>
+    <string name="act_main_heaters_hint">Heaters</string>
     <string name="act_main_open_room">Open room 1</string>
     <string name="room_save_action">Save room</string>
 
