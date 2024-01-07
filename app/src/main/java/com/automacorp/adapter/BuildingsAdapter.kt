@@ -12,7 +12,8 @@ import com.automacorp.model.BuildingDto
 class BuildingsAdapter(val listener: OnBuildingClickListener) : RecyclerView.Adapter<BuildingsAdapter.BuildingsViewHolder>() {
 
     inner class BuildingsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val name: TextView = view.findViewById(R.id.txt_building_list_name)
+        val name: TextView = view.findViewById(R.id.txt_room_name2)
+        val outsideTemperature: TextView = view.findViewById(R.id.txt_current_temperature_value)
     }
 
     private val items = mutableListOf<BuildingDto>()
@@ -35,6 +36,7 @@ class BuildingsAdapter(val listener: OnBuildingClickListener) : RecyclerView.Ada
         val buildingDto = items[position]
         holder.apply {
             name.text = buildingDto.name
+            outsideTemperature.text = buildingDto.outsideTemperature.toString()
             itemView.setOnClickListener { listener.selectBuilding(buildingDto.name) }
         }
     }

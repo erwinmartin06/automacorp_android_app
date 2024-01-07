@@ -10,6 +10,7 @@
     //Activity : Room
     <string name="act_main_roomname_hint">Room name</string>
     <string name="act_main_currenttemp_hint">Current temperature</string>
+    <string name="act_main_outside_temp_hint">Outside temperature</string>
     <string name="act_main_targettemperature_hint">Target temperature</string>
     <string name="act_main_windows_hint">Windows</string>
     <string name="act_main_heaters_hint">Heaters</string>

@@ -130,7 +130,7 @@ class RoomActivity : BasicActivity() {
         val roomId = room!!.id
         val roomDto = RoomCommandDto(
             name = findViewById<EditText>(R.id.txt_room_name2).text.toString(),
-            currentTempId = room.currentTempId,
+            currentTemp = room.currentTemp,
             targetTemp = findViewById<EditText>(R.id.txt_target_temperature).text.toString()
                 .toDoubleOrNull(),
             floor = room.floor,

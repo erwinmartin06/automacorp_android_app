@@ -7,7 +7,6 @@ data class RoomDto(
     val targetTemp: Double?,
     val floor: Int,
     val buildingId: Long,
-    val currentTempId: Long,
     val windows: List<WindowDto>,
     val heaters: List<HeaterDto>
 )
