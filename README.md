@@ -20,5 +20,5 @@ The Automacorp Android App has the following functionalities:
 - See all the buildings (Home page)
 - Display all the rooms (Menu -> All rooms)
 - When clicking on a room, all the details are displayed (room name, current temperature, target temperature and the windows/heaters of that room with there status and names)
-- On the room details page, it is possible to change the name or the target temperature of the room, then save it with the save button
+- On the room details page, it is possible to change the name or the target temperature of the room, then send it to the server with the save button
 - Access dev-mind website or send an email
