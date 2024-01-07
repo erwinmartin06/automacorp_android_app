@@ -1,6 +1,6 @@
 # Automacorp Android App - Erwin MARTIN & Céline NI
 
-This Git repository contains the Automacorp android app developped for a programming course.
+This Git repository contains the Automacorp Android App developped for a programming course.
 The goal was to implement the backend of an application managing buildings, rooms, windows, heaters and temperature sensors.
 All of this can, for example, serve as a simulation to understand how to efficiently use energy during winters.
 
@@ -15,7 +15,7 @@ The logins to access the data and the [H2 console](http://localhost:8080/console
 
 # App description
 
-The Automacorp android app has the following functionalities:
+The Automacorp Android App has the following functionalities:
 - Search for a building by name and access all the rooms of that building (Home page)
 - See all the buildings (Home page)
 - Display all the rooms (Menu -> All rooms)
