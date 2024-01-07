@@ -1,4 +1,4 @@
-package com.automacorp
+package com.automacorp.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.automacorp.R
 import com.automacorp.adapter.HeatersAdapter
 import com.automacorp.adapter.WindowsAdapter
 import com.automacorp.model.RoomCommandDto
@@ -98,7 +99,7 @@ class RoomActivity : BasicActivity() {
                 .onFailure {
                     withContext(context = Dispatchers.Main) {
                         it.printStackTrace()
-                        Toast.makeText(applicationContext, "Error on windows loading $it", Toast.LENGTH_LONG)
+                        Toast.makeText(applicationContext, "Error on heaters loading $it", Toast.LENGTH_LONG)
                             .show()
                     }
                 }

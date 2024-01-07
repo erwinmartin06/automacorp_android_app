@@ -37,11 +37,11 @@ class RoomsAdapter(val listener: OnRoomClickListener) : RecyclerView.Adapter<Roo
         holder.apply {
             name.text = roomDto.name
             currentTemperature.text = roomDto.currentTemp?.toString() ?: "?"
-            itemView.setOnClickListener { listener.selectRoom(roomDto.id) } // (1)
+            itemView.setOnClickListener { listener.selectRoom(roomDto.id) }
         }
     }
 
-    override fun onViewRecycled(holder: RoomsViewHolder) { // (2)
+    override fun onViewRecycled(holder: RoomsViewHolder) {
         super.onViewRecycled(holder)
         holder.apply {
             itemView.setOnClickListener(null)

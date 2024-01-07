@@ -2,9 +2,10 @@
     <string name="app_name">Automacorp</string>
     <string name="app_logo_description">automacorp logo</string>
 
-    <string name="act_main_windowname_hint">Window name</string>
-    <string name="act_main_welcome">Welcome on automacorp,\n the app to manage building windows</string>
-    <string name="act_main_open_window">Open window</string>
+    <string name="act_main_building_name_hint">Building name</string>
+    <string name="act_main_welcome">Welcome on automacorp,\n the app to manage building heaters and windows</string>
+    <string name="act_main_open_building_rooms">Show rooms</string>
+    <string name="act_main_building_list">Building list</string>
 
     //Activity : Room
     <string name="act_main_roomname_hint">Room name</string>
@@ -12,12 +13,11 @@
     <string name="act_main_targettemperature_hint">Target temperature</string>
     <string name="act_main_windows_hint">Windows</string>
     <string name="act_main_heaters_hint">Heaters</string>
-    <string name="act_main_open_room">Open room 1</string>
     <string name="room_save_action">Save room</string>
 
     <string name="act_room_list_rooms_hint">Rooms</string>
 
-    <string name="menu_rooms">Building rooms</string>
+    <string name="menu_rooms">All rooms</string>
     <string name="menu_website">Our website</string>
     <string name="menu_email">Send us an email</string>
 </resources>

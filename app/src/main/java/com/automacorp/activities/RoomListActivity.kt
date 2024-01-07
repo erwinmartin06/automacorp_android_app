@@ -1,4 +1,4 @@
-package com.automacorp
+package com.automacorp.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.automacorp.OnRoomClickListener
+import com.automacorp.R
 import com.automacorp.adapter.RoomsAdapter
 import com.automacorp.service.ApiServices
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +34,18 @@ class RoomListActivity : BasicActivity(), OnRoomClickListener {
             runCatching { ApiServices.roomsApiService.findAll().execute() }
                 .onSuccess {
                     withContext(context = Dispatchers.Main) {
-                        roomsAdapter.setItems(it.body() ?: emptyList()) }
+                        val rooms = it.body() ?: emptyList()
+                        if (rooms.isEmpty()) {
+                            // Display a message if no rooms are found
+                            Toast.makeText(
+                                applicationContext,
+                                "There is no room",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        } else {
+                            // Update the adapter with the list of rooms
+                            roomsAdapter.setItems(rooms)
+                        } }
                 }
                 .onFailure {
                     withContext(context = Dispatchers.Main) {

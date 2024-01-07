@@ -1,4 +1,4 @@
-package com.automacorp
+package com.automacorp.activities
 
 import android.content.Intent
 import android.net.Uri
@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.automacorp.R
 
 open class BasicActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
